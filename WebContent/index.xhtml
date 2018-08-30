@@ -11,6 +11,9 @@
 	<p>
 	Names: <c:forEach items="#{helloWorld.names}" var="name"><h:outputText value="#{name}" /></c:forEach>
 	</p>
+	<p>
+	Tree: <ui:include src="nodeview.xhtml"><ui:param name="node" value="#{helloWorld.tree}"/></ui:include> 
+	</p>
     <h:form >
     <h:outputLabel for="name" value="Enter your name" required="true" />
     <h:inputText id="name" value="#{helloWorld.name}" />

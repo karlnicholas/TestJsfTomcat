@@ -1,13 +1,20 @@
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-@ManagedBean(name = "helloWorld", eager = true)
-@SessionScoped
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean(name = "helloWorld")
 public class HelloWorld {
 
 	private String name;
 	private String message;
+	private List<String> names;
+	
+	public HelloWorld() {
+		names = new ArrayList<>(Arrays.asList("Karl", "Kelly", "Kristin"));
+	}
 
 	public void createMessage() {
 		message = "Hello, " + name + "!";
@@ -27,6 +34,10 @@ public class HelloWorld {
 
 	public void setMessage() {
 		message = "Hello, " + name + "!";
+	}
+
+	public List<String> getNames() {
+		return names;
 	}
 
 }
